@@ -90,7 +90,7 @@ export const number: CSSProperties = {
 };
 
 export const digit: CSSProperties = {
-  height: 128 * px,
+  height: 160 * px,
 };
 
 export const body: CSSProperties = {
