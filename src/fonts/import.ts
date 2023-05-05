@@ -13,3 +13,7 @@ export const spaceBold = fetch(
 export const spaceMedium = fetch(
   new URL("@/fonts/SpaceGrotesk-Medium.ttf", import.meta.url).href
 ).then((res) => res.arrayBuffer());
+
+export const helveticaLight = fetch(
+  new URL("@/fonts/helvetica-light.ttf", import.meta.url).href
+).then((res) => res.arrayBuffer());

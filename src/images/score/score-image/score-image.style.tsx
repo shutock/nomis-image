@@ -4,12 +4,12 @@ import type { CSSProperties } from "react";
 const style = { display: "flex", lineHeight: "1em" };
 
 const inter = {
-  fontFamily: "inter",
-  fontWeight: 400,
+  fontFamily: "font",
+  fontWeight: 300,
 };
 
 const space = {
-  fontFamily: "space",
+  fontFamily: "font",
   fontWeight: 500,
 };
 
@@ -25,7 +25,6 @@ const colors = {
 
 export const container: CSSProperties = {
   ...style,
-  ...inter,
   flexDirection: "column",
   justifyContent: "space-between",
   height: "100%",
@@ -93,7 +92,6 @@ export const number: CSSProperties = {
 
 export const body: CSSProperties = {
   ...style,
-  ...inter,
   flexDirection: "column",
   gap: 256 * px,
 };
@@ -107,19 +105,19 @@ export const meta: CSSProperties = {
 
 export const name: CSSProperties = {
   ...style,
-  ...inter,
+  ...space,
   fontSize: 192 * px,
 };
 
 export const handler: CSSProperties = {
   ...style,
-  ...inter,
+  ...space,
   color: colors.accent,
 };
 
 export const eth: CSSProperties = {
   ...style,
-  ...inter,
+  ...space,
   color: colors.hidden,
 };
 

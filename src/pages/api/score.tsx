@@ -11,8 +11,9 @@ export const config = {
 };
 
 const handler: NextApiHandler = async (req) => {
-  // const interMedium = await fetch.interMedium;
-  // const spaceMedium = await fetch.spaceMedium;
+  const spaceMedium = await fetch.spaceMedium;
+  const spaceBold = await fetch.spaceBold;
+  const helveticaLight = await fetch.helveticaLight;
 
   const { searchParams } = new URL(req.url!);
   const size = Number(searchParams.get("size")) || 2048;
@@ -29,18 +30,24 @@ const handler: NextApiHandler = async (req) => {
     width: size,
     height: size,
     fonts: [
-      // {
-      //   data: spaceMedium,
-      //   name: "font",
-      //   style: "normal",
-      //   weight: 500,
-      // },
-      // {
-      //   data: interMedium,
-      //   name: "font",
-      //   style: "normal",
-      //   weight: 400,
-      // },
+      {
+        data: spaceMedium,
+        name: "font",
+        style: "normal",
+        weight: 500,
+      },
+      {
+        data: spaceMedium,
+        name: "font",
+        style: "normal",
+        weight: 700,
+      },
+      {
+        data: helveticaLight,
+        name: "font",
+        style: "normal",
+        weight: 300,
+      },
     ],
   });
 };
