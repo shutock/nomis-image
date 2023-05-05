@@ -56,6 +56,15 @@ export const chart: CSSProperties = {
   right: 256 * px,
 };
 
+export const chartImg: CSSProperties = {
+  ...style,
+  position: "absolute",
+  top: -96 * px,
+  right: -96 * px,
+  bottom: -96 * px,
+  left: -96 * px,
+};
+
 export const number: CSSProperties = {
   ...style,
   fontSize: 192 * px,
@@ -117,9 +126,36 @@ export const time: CSSProperties = {
   gap: 32 * px,
 };
 
+export const logo: CSSProperties = {
+  height: 128 * px,
+  position: "absolute",
+  bottom: 0,
+  right: 0,
+};
+
 export const updated: CSSProperties = {
   ...style,
   color: colors.hidden,
 };
 
 export const date: CSSProperties = { ...style };
+
+export const border: CSSProperties = {
+  ...style,
+  position: "absolute",
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+};
+
+export const gradient: CSSProperties = {
+  ...style,
+  position: "absolute",
+  top: 128 * px,
+  right: 128 * px,
+  width: 1024 * px,
+  height: 1024 * px,
+  borderRadius: "50%",
+  filter: `blur(${256 * px}px)`,
+};
