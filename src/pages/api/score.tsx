@@ -1,6 +1,8 @@
-import { NextApiHandler } from "next";
-import { ScoreImage } from "@/score";
 import { ImageResponse } from "next/server";
+
+import type { NextApiHandler } from "next";
+
+import { ScoreImage } from "@/images";
 
 export const config = {
   runtime: "edge",
