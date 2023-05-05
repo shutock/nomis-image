@@ -40,15 +40,13 @@ export const partner: CSSProperties = {
   ...inter,
   fontSize: 64 * px,
   color: colors.secondary,
-  marginBottom: 16 * px,
+  marginBottom: 32 * px,
 };
 
 export const nomis: CSSProperties = {
   ...style,
-  ...space,
-  fontSize: 128 * px,
-  color: colors.accent,
-  marginBottom: 32 * px,
+  height: 128 * px,
+  marginBottom: 64 * px,
 };
 
 export const score: CSSProperties = {
@@ -88,6 +86,11 @@ export const number: CSSProperties = {
   position: "absolute",
   alignItems: "center",
   justifyContent: "center",
+  gap: 16 * px,
+};
+
+export const digit: CSSProperties = {
+  height: 128 * px,
 };
 
 export const body: CSSProperties = {

@@ -3,15 +3,22 @@ import type { NextApiRequest } from "next";
 
 import * as style from "./score-image.style";
 import { scoreParams as params } from "./score-params";
-import { shortAddress } from "@/utils";
+import { numToDigits, shortAddress } from "@/utils";
+import { months } from "@/lib";
 
 export const ScoreImage: React.FC<{
   req: NextApiRequest;
   ens: string | undefined;
 }> = ({ req, ens }) => {
-  const { address, background, label, logo, score, hue, chart } = params(req)!;
+  const { address, background, label, logo, score, hue, chart, time } =
+    params(req)!;
   const addr = shortAddress(address);
   const is0x = address.slice(0, 2) === "0x";
+  const digits = numToDigits(score);
+  const date = new Date(time);
+  const updated = `${date.getDate()} ${
+    months[date.getMonth()]
+  } ${date.getFullYear()}`;
 
   const { href } = new URL(req.url!);
   const path = href.match(/^https?:\/\/[^/]+/i)![0];
@@ -20,7 +27,7 @@ export const ScoreImage: React.FC<{
     <div style={{ ...style.container, background }}>
       <div style={style.header}>
         {label && <div style={style.partner}>{label}</div>}
-        <div style={style.nomis}>NOMIS</div>
+        <img style={style.nomis} src={`${path}/logos/nomis.svg`} alt="" />
         <div style={style.score}>Score</div>
       </div>
       <div
@@ -30,7 +37,18 @@ export const ScoreImage: React.FC<{
         }}
       />
       <div style={style.chart}>
-        <div style={style.number}>{Math.floor(score)}</div>
+        <div style={style.number}>
+          {digits.map((digit) => {
+            return (
+              <img
+                key={digit}
+                style={style.digit}
+                src={`${path}/digits/${digit}.svg`}
+                alt=""
+              />
+            );
+          })}
+        </div>
         <img
           style={style.chartImg}
           src={`${path}/charts/${chart}.svg`}
@@ -74,7 +92,7 @@ export const ScoreImage: React.FC<{
         )}
         <div style={style.time}>
           <div style={style.updated}>Updated</div>
-          <div style={style.date}>5 May 2023</div>
+          <div style={style.date}>{updated}</div>
         </div>
       </div>
       <img style={style.border} src={`${path}/border.svg`} alt="" />

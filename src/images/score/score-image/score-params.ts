@@ -8,6 +8,7 @@ export const scoreParams = (req: NextApiRequest) => {
   const size = Number(p.get("size")) || 2048;
   const address = p.get("address") || "0xUndefine";
   const score = Number(p.get("score")) || 0;
+  const time = Number(p.get("time")) || new Date().getTime();
 
   const hue = Math.floor((score / 100) * 140);
   const chart =
@@ -27,5 +28,5 @@ export const scoreParams = (req: NextApiRequest) => {
 
   const { background, label, logo } = types[type];
 
-  return { size, address, score, background, label, logo, hue, chart };
+  return { size, address, score, background, label, logo, hue, chart, time };
 };
