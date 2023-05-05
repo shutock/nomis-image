@@ -7,7 +7,7 @@ import { getEns } from "@/utils";
 import { fetch } from "@/fonts";
 
 export const config = {
-  runtime: "edge",
+  runtime: "experimental-edge",
 };
 
 const handler: NextApiHandler = async (req) => {
