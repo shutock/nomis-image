@@ -3,17 +3,12 @@ import type { CSSProperties } from "react";
 
 const style = { display: "flex", lineHeight: "1em" };
 
-const interLight = {
-  fontFamily: "inter",
-  fontWeight: 300,
-};
-
-const interMedium = {
+const inter = {
   fontFamily: "inter",
   fontWeight: 400,
 };
 
-const spaceMedium = {
+const space = {
   fontFamily: "space",
   fontWeight: 500,
 };
@@ -30,7 +25,7 @@ const colors = {
 
 export const container: CSSProperties = {
   ...style,
-  ...interMedium,
+  ...inter,
   flexDirection: "column",
   justifyContent: "space-between",
   height: "100%",
@@ -43,7 +38,7 @@ export const header: CSSProperties = { ...style, flexDirection: "column" };
 
 export const partner: CSSProperties = {
   ...style,
-  ...interLight,
+  ...inter,
   fontSize: 64 * px,
   color: colors.secondary,
   marginBottom: 16 * px,
@@ -51,7 +46,7 @@ export const partner: CSSProperties = {
 
 export const nomis: CSSProperties = {
   ...style,
-  ...spaceMedium,
+  ...space,
   fontSize: 128 * px,
   color: colors.accent,
   marginBottom: 32 * px,
@@ -59,7 +54,7 @@ export const nomis: CSSProperties = {
 
 export const score: CSSProperties = {
   ...style,
-  ...interLight,
+  ...inter,
   fontSize: 64 * px,
   color: colors.hidden,
 };
@@ -86,7 +81,7 @@ export const chartImg: CSSProperties = {
 
 export const number: CSSProperties = {
   ...style,
-  ...spaceMedium,
+  ...space,
   fontSize: 192 * px,
   color: colors.accent,
   width: "100%",
@@ -98,45 +93,45 @@ export const number: CSSProperties = {
 
 export const body: CSSProperties = {
   ...style,
-  ...interMedium,
+  ...inter,
   flexDirection: "column",
   gap: 256 * px,
 };
 
 export const meta: CSSProperties = {
   ...style,
-  ...interMedium,
+  ...inter,
   flexDirection: "column",
   gap: 32 * px,
 };
 
 export const name: CSSProperties = {
   ...style,
-  ...interMedium,
+  ...inter,
   fontSize: 192 * px,
 };
 
 export const handler: CSSProperties = {
   ...style,
-  ...interMedium,
+  ...inter,
   color: colors.accent,
 };
 
 export const eth: CSSProperties = {
   ...style,
-  ...interMedium,
+  ...inter,
   color: colors.hidden,
 };
 
 export const address: CSSProperties = {
   ...style,
-  ...interMedium,
+  ...inter,
   fontSize: 96 * px,
 };
 
 export const zeroX: CSSProperties = {
   ...style,
-  ...interMedium,
+  ...inter,
   color: colors.hidden,
   marginRight: 16 * px,
 };
@@ -145,11 +140,11 @@ export const address0x: CSSProperties = {
   marginRight: 64 * px,
 };
 
-export const symbols: CSSProperties = { ...style, ...interMedium };
+export const symbols: CSSProperties = { ...style, ...inter };
 
 export const time: CSSProperties = {
   ...style,
-  ...interLight,
+  ...inter,
   fontSize: 64 * px,
   gap: 32 * px,
 };

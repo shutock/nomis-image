@@ -11,7 +11,6 @@ export const config = {
 };
 
 const handler: NextApiHandler = async (req) => {
-  const interLight = await fetch.interLight;
   const interMedium = await fetch.interMedium;
   const spaceMedium = await fetch.spaceMedium;
 
@@ -35,18 +34,6 @@ const handler: NextApiHandler = async (req) => {
         name: "font",
         style: "normal",
         weight: 500,
-      },
-      {
-        data: interLight,
-        name: "font",
-        style: "normal",
-        weight: 300,
-      },
-      {
-        data: interLight,
-        name: "font",
-        style: "italic",
-        weight: 200,
       },
       {
         data: interMedium,
