@@ -9,7 +9,7 @@ const Page: NextPage = () => {
       <div>
         <p>
           If you are looking for Nomis visit{" "}
-          <Link href={"https://nomis.cc"}>nomis.cc</Link>
+          <Link href={"https://nomis.cc"}>nomis.cc</Link>.
         </p>
       </div>
     </>
