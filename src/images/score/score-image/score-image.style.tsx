@@ -13,11 +13,6 @@ const interMedium = {
   fontWeight: 400,
 };
 
-const spaceBold = {
-  fontFamily: "space",
-  fontWeight: 700,
-};
-
 const spaceMedium = {
   fontFamily: "space",
   fontWeight: 500,
@@ -91,7 +86,7 @@ export const chartImg: CSSProperties = {
 
 export const number: CSSProperties = {
   ...style,
-  ...spaceBold,
+  ...spaceMedium,
   fontSize: 192 * px,
   color: colors.accent,
   width: "100%",

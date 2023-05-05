@@ -38,12 +38,6 @@ const handler: NextApiHandler = async (req) => {
         weight: 500,
       },
       {
-        data: spaceBold,
-        name: "font",
-        style: "normal",
-        weight: 700,
-      },
-      {
         data: interLight,
         name: "font",
         style: "normal",
