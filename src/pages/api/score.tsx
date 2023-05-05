@@ -37,12 +37,6 @@ const handler: NextApiHandler = async (req) => {
         weight: 500,
       },
       {
-        data: spaceMedium,
-        name: "font",
-        style: "normal",
-        weight: 700,
-      },
-      {
         data: helveticaLight,
         name: "font",
         style: "normal",
