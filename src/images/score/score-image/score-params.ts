@@ -10,7 +10,7 @@ export const scoreParams = (req: NextApiRequest) => {
   const score = Number(p.get("score")) || 0;
   const time = Number(p.get("time")) || new Date().getTime();
 
-  const hue = Math.floor((score / 100) * 140);
+  const hue = Math.floor((score / 100) * 90);
   const chart =
     Math.floor(score / 5 + 0.5) * 5 === 100
       ? 95
