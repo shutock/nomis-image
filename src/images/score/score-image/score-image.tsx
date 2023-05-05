@@ -3,7 +3,7 @@ import type { NextApiRequest } from "next";
 
 import * as style from "./score-image.style";
 import { scoreParams as params } from "./score-params";
-import { color, shortAddress } from "@/utils";
+import { shortAddress } from "@/utils";
 
 export const ScoreImage: React.FC<{
   req: NextApiRequest;
@@ -35,8 +35,6 @@ export const ScoreImage: React.FC<{
           style={style.chartImg}
           src={`${path}/charts/${chart}.svg`}
           alt=""
-          // width={"100%"}
-          // height={"100%"}
         />
       </div>
       <div style={style.body}>
