@@ -11,8 +11,8 @@ export const config = {
 };
 
 const handler: NextApiHandler = async (req) => {
-  const spaceMedium = await fetch.spaceMedium;
-  const spaceBold = await fetch.spaceBold;
+  // const spaceMedium = await fetch.spaceMedium;
+  // const spaceBold = await fetch.spaceBold;
   const helveticaLight = await fetch.helveticaLight;
 
   const { searchParams } = new URL(req.url!);
