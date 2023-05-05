@@ -29,20 +29,20 @@ const handler: NextApiHandler = async (req) => {
   return new ImageResponse(<ScoreImage req={req} ens={ens} />, {
     width: size,
     height: size,
-    fonts: [
-      {
-        data: spaceMedium,
-        name: "font",
-        style: "normal",
-        weight: 500,
-      },
-      // {
-      //   data: helveticaLight,
-      //   name: "font",
-      //   style: "normal",
-      //   weight: 300,
-      // },
-    ],
+    // fonts: [
+    //   {
+    //     data: spaceMedium,
+    //     name: "font",
+    //     style: "normal",
+    //     weight: 500,
+    //   },
+    //   {
+    //     data: helveticaLight,
+    //     name: "font",
+    //     style: "normal",
+    //     weight: 300,
+    //   },
+    // ],
   });
 };
 
