@@ -29,12 +29,12 @@ const handler: NextApiHandler = async (req) => {
     width: size,
     height: size,
     fonts: [
-      {
-        data: spaceMedium,
-        name: "font",
-        style: "normal",
-        weight: 500,
-      },
+      // {
+      //   data: spaceMedium,
+      //   name: "font",
+      //   style: "normal",
+      //   weight: 500,
+      // },
       {
         data: interMedium,
         name: "font",
