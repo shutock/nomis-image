@@ -1,107 +1,125 @@
 import { color } from "@/utils";
 import type { CSSProperties } from "react";
 
-const flex = { display: "flex" };
+const style = { display: "flex", lineHeight: "1em" };
 
 const px = 1;
 
 const colors = {
-  bg: "#1a1a1a",
   accent: color("white", 100),
   primary: color("white", 80),
   secondary: color("white", 60),
   hidden: color("white", 40),
+  border: color("white", 20),
 };
 
 export const container: CSSProperties = {
-  ...flex,
+  ...style,
   flexDirection: "column",
   justifyContent: "space-between",
   height: "100%",
   width: "100%",
-  background: colors.bg,
   color: colors.accent,
   padding: 256 * px,
 };
 
-export const header: CSSProperties = { ...flex, flexDirection: "column" };
+export const header: CSSProperties = { ...style, flexDirection: "column" };
 
 export const partner: CSSProperties = {
-  ...flex,
+  ...style,
   fontSize: 64 * px,
-  lineHeight: "1em",
   color: colors.secondary,
   marginBottom: 16 * px,
 };
 
 export const nomis: CSSProperties = {
-  ...flex,
+  ...style,
   fontSize: 128 * px,
-  lineHeight: "1em",
   color: colors.primary,
   marginBottom: 32 * px,
 };
 
 export const score: CSSProperties = {
-  ...flex,
+  ...style,
   fontSize: 64 * px,
-  lineHeight: "1em",
   color: colors.hidden,
 };
 
+export const chart: CSSProperties = {
+  ...style,
+  width: 768 * px,
+  height: 768 * px,
+  border: `${96 * px}px solid ${colors.border}`,
+  borderRadius: "50%",
+  position: "absolute",
+  top: 256 * px,
+  right: 256 * px,
+};
+
+export const number: CSSProperties = {
+  ...style,
+  fontSize: 192 * px,
+  color: colors.accent,
+  width: "100%",
+  height: "100%",
+  position: "absolute",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
 export const body: CSSProperties = {
-  ...flex,
+  ...style,
   flexDirection: "column",
   gap: 256 * px,
 };
 
 export const meta: CSSProperties = {
-  ...flex,
+  ...style,
   flexDirection: "column",
   gap: 32 * px,
 };
 
 export const name: CSSProperties = {
-  ...flex,
+  ...style,
   fontSize: 192 * px,
-  lineHeight: "1em",
 };
 
 export const handler: CSSProperties = {
-  ...flex,
+  ...style,
   color: colors.accent,
 };
 
 export const eth: CSSProperties = {
-  ...flex,
+  ...style,
   color: colors.hidden,
 };
 
 export const address: CSSProperties = {
-  ...flex,
+  ...style,
   fontSize: 96 * px,
-  lineHeight: "1em",
 };
 
 export const zeroX: CSSProperties = {
-  ...flex,
+  ...style,
   color: colors.hidden,
   marginRight: 16 * px,
 };
 
-export const symbols: CSSProperties = { ...flex };
+export const address0x: CSSProperties = {
+  marginRight: 64 * px,
+};
+
+export const symbols: CSSProperties = { ...style };
 
 export const time: CSSProperties = {
-  ...flex,
+  ...style,
   fontSize: 64 * px,
   gap: 32 * px,
-  lineHeight: "1em",
 };
 
 export const updated: CSSProperties = {
-  ...flex,
+  ...style,
   color: colors.hidden,
-  lineHeight: "1em",
 };
 
-export const date: CSSProperties = { ...flex, lineHeight: "1em" };
+export const date: CSSProperties = { ...style };
