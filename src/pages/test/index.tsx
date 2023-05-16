@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 
 const Page: NextPage = () => {
   const now = new Date().getTime();
+
   const [address, setAddress] = React.useState<string>(
     "0x297f0458cdda6a60116eac648ed2419293131114"
   );
@@ -109,7 +110,7 @@ const Page: NextPage = () => {
             <span>time</span>
             <input
               type="date"
-              defaultValue={formatDate(time)}
+              value={formatDate(time)}
               onChange={(e) => handleOnChange(e, "time")}
             />
           </label>
@@ -191,5 +192,5 @@ const formatDate = (timestamp: number) => {
   const day = date.getDate().toString().padStart(2, "0");
   const year = date.getFullYear();
 
-  return `${month}-${day}-${year}`;
+  return `${year}-${month}-${day}`;
 };
