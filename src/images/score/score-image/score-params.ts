@@ -5,16 +5,17 @@ import { scoreTypes as types } from "./score-types";
 export const scoreParams = (req: NextApiRequest) => {
   const { searchParams: p } = new URL(req.url!);
 
-  const size = Number(p.get("size")) || 2048;
+  const sizeAttr = Number(p.get("size")) || 350;
+  const size = sizeAttr > 0 ? sizeAttr : 350;
+
   const address = p.get("address") || "0xUndefine";
-  const score = Number(p.get("score")) || 0;
+  const scoreAttr = Number(p.get("score")) || 0;
+  const score = scoreAttr > 0 ? scoreAttr : 0;
+
   const time = Number(p.get("time")) || new Date().getTime();
 
   const hue = Math.floor((score / 100) * 90);
-  const chart =
-    Math.floor(score / 5 + 0.5) * 5 === 100
-      ? 95
-      : Math.floor(score / 5 + 0.5) * 5;
+  const chart = score < 100 ? Math.floor(score / 5) * 5 : 100;
 
   let type = "";
 

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextApiRequest } from "next";
 
-import * as style from "./score-image.style";
+import { getStyles } from "./score-image.style";
 import { scoreParams as params } from "./score-params";
 import { numToDigits, shortAddress } from "@/utils";
 import { months } from "@/lib";
@@ -10,18 +10,20 @@ export const ScoreImage: React.FC<{
   req: NextApiRequest;
   ens: string | undefined;
 }> = ({ req, ens }) => {
-  const { address, background, label, logo, score, hue, chart, time } =
+  const { address, background, label, logo, score, hue, chart, time, size } =
     params(req)!;
   const addr = shortAddress(address);
   const is0x = address.slice(0, 2) === "0x";
   const digits = numToDigits(score);
   const date = new Date(time);
-  const updated = `${date.getDate()} ${
+  const updated = `${
     months[date.getMonth()]
-  } ${date.getFullYear()}`;
+  } ${date.getDate()}, ${date.getFullYear()}`;
 
   const { href } = new URL(req.url!);
   const path = href.match(/^https?:\/\/[^/]+/i)![0];
+
+  const style = getStyles(size);
 
   return (
     <div style={{ ...style.container, background }}>

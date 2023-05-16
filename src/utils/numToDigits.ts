@@ -1,11 +1,6 @@
 export const numToDigits = (score: number) => {
-  if (score < 0 || score > 100) {
-    throw new Error("Invalid score");
-  }
-
-  if (score === 0) {
-    return [0];
-  }
+  if (score <= 0) return [0];
+  if (score >= 100) return [1, 0, 0];
 
   const digits: number[] = [];
 

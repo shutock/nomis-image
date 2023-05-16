@@ -17,7 +17,8 @@ const handler: NextApiHandler = async (req) => {
   // const interLight = await fetch.interLight;
 
   const { searchParams } = new URL(req.url!);
-  const size = Number(searchParams.get("size")) || 2048;
+  const sizeAttr = Number(searchParams.get("size")) || 350;
+  const size = sizeAttr > 0 ? sizeAttr : 350;
   const address = searchParams.get("address");
   const isEns = searchParams.get("ens") || true;
 
