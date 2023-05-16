@@ -161,7 +161,7 @@ const Page: NextPage = () => {
             fetch
           </button>
           {isLoading && <div>loading...</div>}
-          {fetchTime > 0 && <div>loaded for {fetchTime.toFixed(2)}ms</div>}
+          {fetchTime > 0 && <div>loaded in {fetchTime.toFixed(2)}ms</div>}
         </form>
         <div>
           {url && (
