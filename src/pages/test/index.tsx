@@ -16,6 +16,8 @@ const Page: NextPage = () => {
   const [ens, setEns] = React.useState(false);
   const [score, setScore] = React.useState(69);
   const [size, setSize] = React.useState(350);
+  const [chainId, setChainId] = React.useState(1);
+  const [model, setModel] = React.useState(1);
   const [type, setType] = React.useState<"default" | "symbiosis" | "xdefi">(
     "default"
   );
@@ -36,6 +38,8 @@ const Page: NextPage = () => {
     score: { action: setScore, value: score },
     size: { action: setSize, value: size },
     type: { action: setType, value: type },
+    chainId: { action: setChainId, value: chainId },
+    model: { action: setModel, value: model },
   };
 
   for (const key in attributes) {
@@ -75,7 +79,7 @@ const Page: NextPage = () => {
       const startTime = performance.now();
 
       const response = await fetch(
-        `/api/score?time=${time}&ens=${ens}&score=${score}&size=${size}&type=${type}&address=${address}`
+        `/api/score?time=${time}&ens=${ens}&score=${score}&size=${size}&type=${type}&address=${address}&chainId=${chainId}&model=${model}`
       );
       const endTime = performance.now();
       setFetchTime(endTime - startTime);
@@ -137,6 +141,22 @@ const Page: NextPage = () => {
             />
           </label>
           <label>
+            <span>chainId</span>
+            <input
+              type="number"
+              value={chainId}
+              onChange={(e) => handleOnChange(e, "chainId")}
+            />
+          </label>
+          <label>
+            <span>model</span>
+            <input
+              type="number"
+              value={model}
+              onChange={(e) => handleOnChange(e, "model")}
+            />
+          </label>
+          <label>
             <span>size</span>
             <input
               type="number"
@@ -167,7 +187,7 @@ const Page: NextPage = () => {
         <div>
           {url && (
             <>
-              <img src={url} alt="" />
+              <img className={styles.image} src={url} alt="" />
 
               <div>
                 <span>image link:</span>

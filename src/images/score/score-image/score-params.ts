@@ -11,6 +11,8 @@ export const scoreParams = (req: NextApiRequest) => {
   const address = p.get("address") || "0xUndefine";
   const scoreAttr = Number(p.get("score")) || 0;
   const score = scoreAttr > 0 ? scoreAttr : 0;
+  const model = p.get("model");
+  const chainId = p.get("chainId");
 
   const time = Number(p.get("time")) || new Date().getTime();
 
@@ -29,5 +31,17 @@ export const scoreParams = (req: NextApiRequest) => {
 
   const { background, label, logo } = types[type];
 
-  return { size, address, score, background, label, logo, hue, chart, time };
+  return {
+    size,
+    address,
+    score,
+    background,
+    label,
+    logo,
+    hue,
+    chart,
+    time,
+    model,
+    chainId,
+  };
 };

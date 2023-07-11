@@ -5,13 +5,30 @@ import { getStyles } from "./score-image.style";
 import { scoreParams as params } from "./score-params";
 import { numToDigits, shortAddress } from "@/utils";
 import { months } from "@/lib";
+import { IBlockchain } from "@/types";
 
-export const ScoreImage: React.FC<{
+export const ScoreImage = ({
+  req,
+  ens,
+  chain,
+}: {
   req: NextApiRequest;
-  ens: string | undefined;
-}> = ({ req, ens }) => {
-  const { address, background, label, logo, score, hue, chart, time, size } =
-    params(req)!;
+  ens?: string;
+  chain?: IBlockchain;
+}) => {
+  const {
+    address,
+    background,
+    label,
+    logo,
+    score,
+    hue,
+    chart,
+    time,
+    size,
+    chainId,
+    model,
+  } = params(req)!;
   const addr = shortAddress(address);
   const is0x = address.slice(0, 2) === "0x";
   const digits = numToDigits(score);
@@ -91,6 +108,9 @@ export const ScoreImage: React.FC<{
         )}
         {logo && (
           <img style={style.logo} src={`${path}/logos/${logo}`} alt="" />
+        )}
+        {chain && chain.icon && (
+          <img style={style.logo} src={`${chain.icon}`} alt="" />
         )}
         <div style={style.time}>
           <div style={style.updated}>Updated</div>

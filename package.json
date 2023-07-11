@@ -9,12 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@iden3/js-iden3-auth": "^1.0.0-beta.7",
     "@types/node": "18.16.3",
+    "@types/qrcode": "^1.5.0",
     "@types/react": "18.2.5",
     "@types/react-dom": "18.2.3",
     "eslint": "8.39.0",
     "eslint-config-next": "13.4.0",
     "next": "13.4.0",
+    "qr-svg": "^1.1.0",
+    "qrcode": "^1.5.3",
+    "raw-body": "^2.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.62.1",

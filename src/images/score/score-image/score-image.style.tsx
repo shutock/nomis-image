@@ -156,6 +156,7 @@ export const getStyles = (size: number) => {
     position: "absolute",
     bottom: 0,
     right: 0,
+    borderRadius: 999,
   };
 
   const updated: CSSProperties = {
@@ -170,6 +171,14 @@ export const getStyles = (size: number) => {
     position: "absolute",
     width: 2048 * px,
     height: 2048 * px,
+  };
+
+  const chain: CSSProperties = {
+    ...style,
+    height: 128 * px,
+    position: "absolute",
+    bottom: 0,
+    right: 0,
   };
 
   const gradient: CSSProperties = {
@@ -208,5 +217,6 @@ export const getStyles = (size: number) => {
     date,
     border,
     gradient,
+    chain,
   };
 };
